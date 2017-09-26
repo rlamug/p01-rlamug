@@ -11,16 +11,32 @@ int main () {
    */
    srand (time(NULL));
    int randomNumber; // this variable will hold the random number
-   /*
-   generate secret number: between 1 and 10. Change the 10 to a different value to generate random numbers up to that maximum value
-   */
-   randomNumber= rand() % 10 + 1;
    int guessedNumber; // this variable will hold the player's guessed number
    int answer; // this variable will hold the answer to the question if the player want to play again
-
+   char level; // this variable holds the difficulty level
 
    do {
-   cout << "Guess the computer's number between 1-10." << endl;      
+   cout << "Choose a difficulty. E for Easy, M for Medium, or H for Hard." << endl;
+   cin >> level;
+
+   switch (level) {
+   
+      case 'E' :
+         randomNumber= rand() % 2 + 1;
+         cout << "Guess the computer's number between 1-2." << endl;
+         break;
+      case 'M' :
+         randomNumber= rand() % 10 + 1;
+         cout << "Guess the computer's number between 1-10." << endl;
+         break;
+      case 'H' :
+         randomNumber= rand() % 100 + 1;
+         cout << "Guess the computer's number between 1-100." << endl;
+         break;
+      default :
+         cout << "Invalid difficulty. Error." << endl;
+   }
+
    cin >> guessedNumber; //Player puts in guessed number
 
    if ( randomNumber == guessedNumber ) {
