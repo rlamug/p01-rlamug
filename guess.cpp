@@ -19,7 +19,7 @@ int main () {
    cout << "Choose a difficulty. E for Easy, M for Medium, or H for Hard." << endl;
    cin >> level;
 
-   switch (level) {
+   switch (level) { //player chooses difficulty level
    
       case 'E' :
          randomNumber= rand() % 2 + 1;
