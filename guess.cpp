@@ -41,9 +41,16 @@ int main () {
 
    if ( randomNumber == guessedNumber ) {
       cout << "You guessed correctly! You win!" << endl;
-   } else {
+   }   
+   if ( randomNumber > guessedNumber ) {
+      cout << "The random number is higher than your guess." << endl;
       cout << "You were off by " << abs(randomNumber - guessedNumber) << ". Sorry, you lose." << endl;
    }
+   if ( randomNumber < guessedNumber ) {
+      cout << "The random number is lower than your guess." << endl;
+      cout << "You were off by " << abs(randomNumber - guessedNumber) << ". Sorry, you lose." << endl;
+   }
+
    cout << "Would you like to play again? Type in 1 to play again or type in any other number to quit." << endl;
    cin >> answer;
 
